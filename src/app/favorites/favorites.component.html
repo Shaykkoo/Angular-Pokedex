@@ -1,0 +1,21 @@
+<div class="favorites-container">
+    <h2 class="favorites-title">Mes Pokémon Favoris</h2>
+    <table class="favorites-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pokemon of favoritePokemon">
+          <td>{{ pokemon.id }}</td>
+          <td>{{ pokemon.name }}</td>
+          <td>
+            <button class="favorite-button" (click)="removeFromFavorites(pokemon.id)">Retirer des favoris</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

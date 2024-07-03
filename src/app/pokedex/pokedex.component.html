@@ -1,0 +1,31 @@
+<div class="pokedex">
+    <h2>Liste des Pokémon</h2>
+    <div style="margin-bottom: 20px;">
+        <a class="favorites-button" [routerLink]="['/favorites']">Voir les favoris</a>
+    </div>
+    <table class="pokemon-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Favoris</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pokemon of pokemonList">
+          <td>{{ pokemon.id }}</td>
+          <td>{{ pokemon.name }}</td>
+          <td>
+            <button (click)="toggleFavorite(pokemon.id)">
+              <span *ngIf="isFavorite(pokemon.id)">Retirer des favoris</span>
+              <span *ngIf="!isFavorite(pokemon.id)">Ajouter aux favoris</span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Lien vers la liste des favoris -->
+    
+  </div>
+  

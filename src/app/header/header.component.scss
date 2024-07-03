@@ -1,0 +1,80 @@
+$primary-color: #3498db; 
+$secondary-color: #f39c12; 
+$text-color: #fff; 
+$background-color: #2c3e50; 
+
+@mixin button-style($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+header {
+  background-color: $background-color;
+  padding: 20px 0;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  nav {
+    a {
+      text-decoration: none;
+      color: $text-color;
+      margin: 0 15px;
+      padding: 10px 15px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+
+      &.active {
+        background-color: $primary-color;
+        color: $text-color;
+        font-weight: bold;
+      }
+
+      &:hover {
+        background-color: $primary-color;
+        color: $text-color;
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  /* Animation pour le header */
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  animation: fadeInUp 0.8s ease-out; 
+}
